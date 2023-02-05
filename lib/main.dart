@@ -62,6 +62,7 @@ class Saturday extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blueGrey,
+        elevation: 0,
         title: const Text('Saturday - Study'),
       ),
       body: SafeArea(
@@ -208,6 +209,21 @@ class Sunday extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class Monday extends StatelessWidget {
+  const Monday({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Monday - Study'),
+        backgroundColor: Colors.blueGrey,
+      ),
+      body: const SafeArea(child: Center()),
     );
   }
 }
