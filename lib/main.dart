@@ -8,9 +8,48 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Material App',
-      debugShowCheckedModeBanner: false,
-      home: Sunday(),
+        title: 'Material App',
+        debugShowCheckedModeBanner: false,
+        home: MainScreen());
+  }
+}
+
+class MainScreen extends StatelessWidget {
+  const MainScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blueGrey,
+        title: const Text('Study Session'),
+        elevation: 0,
+        centerTitle: true,
+      ),
+      body: SafeArea(
+        child: ListView(children: [
+          Card(
+            child: ListTile(
+              title: const Text('2/4/23 - Saturday'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) {
+                  return const Saturday();
+                })));
+              },
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: const Text('2/5/23 - Sunday'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) {
+                  return const Sunday();
+                })));
+              },
+            ),
+          )
+        ]),
+      ),
     );
   }
 }
@@ -25,29 +64,31 @@ class Saturday extends StatelessWidget {
         backgroundColor: Colors.blueGrey,
         title: const Text('Saturday - Study'),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
-              height: 400,
-              width: 400,
-              decoration: BoxDecoration(
-                image: const DecorationImage(
-                    image: NetworkImage(
-                        'https://images.pexels.com/photos/13739093/pexels-photo-13739093.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
-                    fit: BoxFit.cover),
-                boxShadow: const [
-                  BoxShadow(
-                      color: Colors.grey,
-                      offset: Offset(10, 10),
-                      blurRadius: 5.0,
-                      spreadRadius: 2.0)
-                ],
-                borderRadius: BorderRadius.circular(20),
-              ),
-            )
-          ],
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 400,
+                width: 400,
+                decoration: BoxDecoration(
+                  image: const DecorationImage(
+                      image: NetworkImage(
+                          'https://images.pexels.com/photos/13739093/pexels-photo-13739093.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+                      fit: BoxFit.cover),
+                  boxShadow: const [
+                    BoxShadow(
+                        color: Colors.grey,
+                        offset: Offset(10, 10),
+                        blurRadius: 5.0,
+                        spreadRadius: 2.0)
+                  ],
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
