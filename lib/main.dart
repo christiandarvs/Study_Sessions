@@ -248,7 +248,10 @@ class Monday extends StatelessWidget {
                 fit: BoxFit.cover),
           ),
           alignment: Alignment.center,
-          child: Text('${time.hour} : ${time.minute}'),
+          child: Text(
+            '${time.hour} : ${time.minute}',
+            style: const TextStyle(fontSize: 40),
+          ),
         ),
       )),
     );
