@@ -47,6 +47,16 @@ class MainScreen extends StatelessWidget {
                 })));
               },
             ),
+          ),
+          Card(
+            child: ListTile(
+              title: const Text('2/6/23 - Monday'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) {
+                  return const Monday();
+                })));
+              },
+            ),
           )
         ]),
       ),
@@ -218,12 +228,29 @@ class Monday extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var time = DateTime.now();
+
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
         title: const Text('Monday - Study'),
         backgroundColor: Colors.blueGrey,
       ),
-      body: const SafeArea(child: Center()),
+      body: SafeArea(
+          child: Center(
+        child: Container(
+          height: double.infinity,
+          width: double.infinity,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+                image: NetworkImage(
+                    'https://images.pexels.com/photos/3408353/pexels-photo-3408353.jpeg?auto=compress&cs=tinysrgb&w=1600'),
+                fit: BoxFit.cover),
+          ),
+          alignment: Alignment.center,
+          child: Text('${time.hour} : ${time.minute}'),
+        ),
+      )),
     );
   }
 }
