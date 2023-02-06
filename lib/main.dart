@@ -223,9 +223,14 @@ class Sunday extends StatelessWidget {
   }
 }
 
-class Monday extends StatelessWidget {
+class Monday extends StatefulWidget {
   const Monday({super.key});
 
+  @override
+  State<Monday> createState() => _MondayState();
+}
+
+class _MondayState extends State<Monday> {
   @override
   Widget build(BuildContext context) {
     var time = DateTime.now();
@@ -248,9 +253,24 @@ class Monday extends StatelessWidget {
                 fit: BoxFit.cover),
           ),
           alignment: Alignment.center,
-          child: Text(
-            '${time.hour} : ${time.minute}',
-            style: const TextStyle(fontSize: 40),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                '${time.hour} : ${time.minute}',
+                style: const TextStyle(fontSize: 40),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                  onPressed: (() {
+                    setState(() {
+                      time = DateTime.now();
+                    });
+                  }),
+                  child: const Text('Refresh'))
+            ],
           ),
         ),
       )),
