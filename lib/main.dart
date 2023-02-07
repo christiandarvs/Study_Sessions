@@ -540,6 +540,7 @@ class Tuesday extends StatelessWidget {
                           margin: const EdgeInsets.symmetric(
                               horizontal: 12, vertical: 8),
                           child: ListTile(
+                            onTap: () {},
                             title: Text(
                               transactionDetails[index],
                               style: const TextStyle(color: Colors.white),
