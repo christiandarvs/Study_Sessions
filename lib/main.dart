@@ -293,12 +293,299 @@ class Tuesday extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final actions = ['Add', 'Send', 'Receive', 'Pay Bill', 'More'];
+    final icons = [
+      const Icon(
+        Icons.add,
+        color: Colors.white,
+      ),
+      const Icon(
+        Icons.send,
+        color: Colors.white,
+      ),
+      const Icon(
+        Icons.arrow_downward_rounded,
+        color: Colors.white,
+      ),
+      const Icon(
+        Icons.payments_rounded,
+        color: Colors.white,
+      ),
+      const Icon(
+        Icons.grid_view_outlined,
+        color: Colors.white,
+      )
+    ];
+    final transactionDetails = [
+      'Google Course',
+      'Microsoft',
+      'Dribble',
+      'LinkedIn',
+      'Github'
+    ];
+
+    final purchaseType = [
+      'App Design Basics',
+      'Subscriptions',
+      'Subscriptions',
+      'Subscriptions',
+      'Subscriptions'
+    ];
+
+    final logoLinks = [
+      'https://cdn-icons-png.flaticon.com/512/300/300221.png',
+      'https://cdn-icons-png.flaticon.com/512/732/732221.png',
+      'https://cdn-icons-png.flaticon.com/512/2374/2374595.png',
+      'https://cdn-icons-png.flaticon.com/512/3536/3536505.png',
+      'https://cdn-icons-png.flaticon.com/512/733/733553.png'
+    ];
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Tuesday - Study'),
-        backgroundColor: Colors.blueGrey,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: CircleAvatar(
+              radius: 30,
+              backgroundColor: const Color(0xff19231f),
+              child: IconButton(
+                onPressed: (() {}),
+                icon: const Icon(Icons.wallet_outlined),
+                color: Colors.white,
+              ),
+            ),
+          ),
+          const Padding(
+            padding: EdgeInsets.all(10.0),
+            child: CircleAvatar(
+              radius: 30,
+              backgroundImage: NetworkImage(
+                  'https://cdn-icons-png.flaticon.com/512/4333/4333609.png'),
+            ),
+          ),
+        ],
       ),
-      body: const SafeArea(child: Center()),
+      backgroundColor: const Color(0xff090b0a),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: const [
+                  Text(
+                    'Total Balance',
+                    style: TextStyle(color: Colors.grey, fontSize: 18),
+                  ),
+                  Text(
+                    'USD 1,500.00',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 35),
+                  )
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(horizontal: 15),
+              height: 200,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  gradient: const LinearGradient(colors: [
+                    Color.fromARGB(255, 85, 151, 154),
+                    Color(0xff43395c)
+                  ])),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Icon(
+                          Icons.sim_card,
+                          color: Colors.white,
+                          size: 35,
+                        ),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(20.0),
+                        child: Icon(
+                          Icons.rss_feed,
+                          color: Colors.white,
+                          size: 35,
+                        ),
+                      )
+                    ],
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    child: Text(
+                      '1234 5678 9000',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontFamily: 'monospace',
+                          wordSpacing: 10,
+                          fontSize: 25),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          children: const [
+                            Text(
+                              'Christian Darvin',
+                              style:
+                                  TextStyle(fontSize: 18, color: Colors.white),
+                            ),
+                            SizedBox(
+                              width: 40,
+                            ),
+                            Text(
+                              '07/23',
+                              style:
+                                  TextStyle(fontSize: 18, color: Colors.white),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Image.network(
+                                fit: BoxFit.cover,
+                                height: 50,
+                                'https://cdn-icons-png.flaticon.com/512/217/217425.png'),
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.all(10),
+              child: SizedBox(
+                  height: 100,
+                  child: ListView.separated(
+                      separatorBuilder: (context, index) {
+                        return const SizedBox(
+                          width: 20,
+                        );
+                      },
+                      itemCount: actions.length,
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemBuilder: ((context, index) {
+                        return Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            ElevatedButton(
+                              onPressed: (() {
+                                debugPrint('Pressed');
+                              }),
+                              style: ElevatedButton.styleFrom(
+                                  backgroundColor: const Color(0xff1b221f),
+                                  shape: const CircleBorder(),
+                                  padding: const EdgeInsets.all(20)),
+                              child: icons[index],
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              actions[index],
+                              style: const TextStyle(color: Colors.white),
+                            )
+                          ],
+                        );
+                      }))),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Transaction',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                  TextButton(
+                      onPressed: (() {}),
+                      child: const Text(
+                        'See all',
+                        style: TextStyle(color: Colors.grey, fontSize: 17),
+                      )),
+                ],
+              ),
+            ),
+            Expanded(
+                child: ListView.builder(
+                    itemCount: 5,
+                    itemBuilder: ((context, index) {
+                      return Card(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15)),
+                          color: const Color(0xff11171c),
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 12, vertical: 8),
+                          child: ListTile(
+                            title: Text(
+                              transactionDetails[index],
+                              style: const TextStyle(color: Colors.white),
+                            ),
+                            subtitle: Text(
+                              purchaseType[index],
+                              style: const TextStyle(color: Colors.grey),
+                            ),
+                            leading: CircleAvatar(
+                              backgroundColor: const Color(0xff080a09),
+                              child: Image.network(
+                                logoLinks[index],
+                                fit: BoxFit.cover,
+                                height: 25,
+                              ),
+                            ),
+                          ));
+                    })))
+          ],
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: Colors.black,
+          elevation: 0,
+          unselectedItemColor: Colors.grey,
+          selectedItemColor: Colors.white,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          type: BottomNavigationBarType.fixed,
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.payment), label: 'Transactions'),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.stacked_line_chart_outlined), label: 'Blank'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Account'),
+          ]),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (() {}),
+        backgroundColor: const Color(0xff15e9ff),
+        child: const Icon(
+          Icons.qr_code_scanner_outlined,
+          color: Colors.black,
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
