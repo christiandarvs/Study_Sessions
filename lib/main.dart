@@ -344,25 +344,42 @@ class Tuesday extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.transparent,
         actions: [
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: CircleAvatar(
-              radius: 30,
-              backgroundColor: const Color(0xff19231f),
-              child: IconButton(
-                onPressed: (() {}),
-                icon: const Icon(Icons.wallet_outlined),
-                color: Colors.white,
+          SizedBox(
+            height: 40,
+            width: 40,
+            child: ElevatedButton(
+              onPressed: (() {
+                debugPrint('Pressed');
+              }),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xff1b221f),
+                  shape: const CircleBorder(),
+                  padding: const EdgeInsets.all(5)),
+              child: const Icon(Icons.payment),
+            ),
+          ),
+          const SizedBox(
+            width: 20,
+          ),
+          SizedBox(
+            height: 40,
+            width: 40,
+            child: ElevatedButton(
+              onPressed: (() {
+                debugPrint('Pressed');
+              }),
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xff1b221f),
+                  shape: const CircleBorder(),
+                  padding: const EdgeInsets.all(5)),
+              child: Image.network(
+                'https://cdn-icons-png.flaticon.com/512/4333/4333609.png',
+                fit: BoxFit.cover,
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.all(10.0),
-            child: CircleAvatar(
-              radius: 30,
-              backgroundImage: NetworkImage(
-                  'https://cdn-icons-png.flaticon.com/512/4333/4333609.png'),
-            ),
+          const SizedBox(
+            width: 20,
           ),
         ],
       ),
@@ -395,10 +412,14 @@ class Tuesday extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
-                  gradient: const LinearGradient(colors: [
-                    Color.fromARGB(255, 85, 151, 154),
-                    Color(0xff43395c)
-                  ])),
+                  gradient: const LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Color.fromARGB(255, 72, 127, 130),
+                        Color(0xff1e232f),
+                        Color(0xff43395c)
+                      ])),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
