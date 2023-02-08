@@ -735,6 +735,7 @@ class _WednesdayA1State extends State<WednesdayA1> {
   String status1 = 'OFF';
   String status2 = 'OFF';
   String status3 = 'OFF';
+  int connectedDevices = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -775,16 +776,16 @@ class _WednesdayA1State extends State<WednesdayA1> {
               margin: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
+                children: [
+                  const Text(
                     'Good Morning, Alex',
                     style: TextStyle(fontSize: 30, color: Colors.white),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
-                  Text('6 Devices are active now',
-                      style: TextStyle(fontSize: 18, color: Colors.grey))
+                  Text('$connectedDevices Devices are active now',
+                      style: const TextStyle(fontSize: 18, color: Colors.grey))
                 ],
               ),
             ),
@@ -886,12 +887,16 @@ class _WednesdayA1State extends State<WednesdayA1> {
                                 onChanged: (value) {
                                   setState(() {
                                     isSwitched = !isSwitched;
+                                    isSwitched
+                                        ? connectedDevices++
+                                        : connectedDevices--;
                                   });
                                 })
                           ],
                         ),
                         Container(
-                          margin: const EdgeInsets.all(20),
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 12),
                           alignment: Alignment.bottomLeft,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -942,12 +947,16 @@ class _WednesdayA1State extends State<WednesdayA1> {
                                 onChanged: (value) {
                                   setState(() {
                                     isSwitched1 = !isSwitched1;
+                                    isSwitched1
+                                        ? connectedDevices++
+                                        : connectedDevices--;
                                   });
                                 })
                           ],
                         ),
                         Container(
-                          margin: const EdgeInsets.all(20),
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 12),
                           alignment: Alignment.bottomLeft,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -998,12 +1007,16 @@ class _WednesdayA1State extends State<WednesdayA1> {
                                 onChanged: (value) {
                                   setState(() {
                                     isSwitched2 = !isSwitched2;
+                                    isSwitched2
+                                        ? connectedDevices++
+                                        : connectedDevices--;
                                   });
                                 })
                           ],
                         ),
                         Container(
-                          margin: const EdgeInsets.all(20),
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 12),
                           alignment: Alignment.bottomLeft,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -1054,12 +1067,16 @@ class _WednesdayA1State extends State<WednesdayA1> {
                                 onChanged: (value) {
                                   setState(() {
                                     isSwitched3 = !isSwitched3;
+                                    isSwitched3
+                                        ? connectedDevices++
+                                        : connectedDevices--;
                                   });
                                 })
                           ],
                         ),
                         Container(
-                          margin: const EdgeInsets.all(20),
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 20, vertical: 12),
                           alignment: Alignment.bottomLeft,
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
@@ -1073,7 +1090,7 @@ class _WednesdayA1State extends State<WednesdayA1> {
                                 height: 10,
                               ),
                               Text(
-                                'Wi - Fi',
+                                'Wi-Fi',
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 16),
                               )
