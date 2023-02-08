@@ -649,7 +649,7 @@ class Wednesday extends StatelessWidget {
                 flex: 3,
                 child: Container(
                   width: double.infinity,
-                  margin: const EdgeInsets.all(25),
+                  margin: const EdgeInsets.all(30),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
@@ -685,10 +685,15 @@ class Wednesday extends StatelessWidget {
                 flex: 1,
                 child: Center(
                   child: SizedBox(
-                    height: 60,
+                    height: 55,
                     width: 300,
                     child: ElevatedButton(
-                      onPressed: (() {}),
+                      onPressed: (() {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: ((context) {
+                          return const WednesdayA1();
+                        })));
+                      }),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
@@ -698,7 +703,9 @@ class Wednesday extends StatelessWidget {
                       child: const Text(
                         'Get Started',
                         style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.black),
+                            fontSize: 19,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.black),
                       ),
                     ),
                   ),
@@ -708,6 +715,254 @@ class Wednesday extends StatelessWidget {
           ),
         ),
       )),
+    );
+  }
+}
+
+class WednesdayA1 extends StatefulWidget {
+  const WednesdayA1({super.key});
+
+  @override
+  State<WednesdayA1> createState() => _WednesdayA1State();
+}
+
+class _WednesdayA1State extends State<WednesdayA1> {
+  bool isSwitched = false;
+  bool isSwitched1 = false;
+  bool isSwitched2 = false;
+  bool isSwitched3 = false;
+  String status = 'OFF';
+  String status1 = 'OFF';
+  String status2 = 'OFF';
+  String status3 = 'OFF';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: const Color(0xff191715),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(12.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                    onPressed: (() {
+                      Navigator.pop(context);
+                    }),
+                    icon: const Icon(
+                      Icons.horizontal_split,
+                      size: 30,
+                    ),
+                    color: Colors.white,
+                  ),
+                  TextButton(
+                      onPressed: (() {}),
+                      child: const CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        backgroundImage: NetworkImage(
+                            'https://cdn-icons-png.flaticon.com/512/4140/4140061.png'),
+                      ))
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  Text(
+                    'Good Morning Alex',
+                    style: TextStyle(fontSize: 30, color: Colors.white),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text('6 Devices are active now',
+                      style: TextStyle(fontSize: 18, color: Colors.grey))
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Container(
+              width: double.infinity,
+              margin: const EdgeInsets.symmetric(horizontal: 20),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
+                  gradient: const LinearGradient(
+                      colors: [Color(0xff1f1f1f), Color(0xff302321)])),
+              height: 100,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        const Icon(
+                          Icons.cloudy_snowing,
+                          color: Colors.white,
+                          size: 40,
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              'Rain Shower',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text('London - Jun15',
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 15,
+                                ))
+                          ],
+                        ),
+                      ],
+                    ),
+                    Row(
+                      children: const [
+                        Text('26 C',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold))
+                      ],
+                    )
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              child: Container(
+                margin: const EdgeInsets.all(25),
+                child: GridView.count(
+                  mainAxisSpacing: 15,
+                  crossAxisSpacing: 15,
+                  crossAxisCount: 2,
+                  children: [
+                    Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.green),
+                      height: 100,
+                      width: 100,
+                      child: Column(children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(status),
+                            Switch(
+                                value: isSwitched,
+                                onChanged: (value) {
+                                  setState(() {
+                                    isSwitched = !isSwitched;
+                                    isSwitched ? status = 'ON' : status = 'OFF';
+                                  });
+                                })
+                          ],
+                        )
+                      ]),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.green),
+                      height: 100,
+                      width: 100,
+                      child: Column(children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(status1),
+                            Switch(
+                                value: isSwitched1,
+                                onChanged: (value) {
+                                  setState(() {
+                                    isSwitched1 = !isSwitched1;
+                                    isSwitched1
+                                        ? status1 = 'ON'
+                                        : status1 = 'OFF';
+                                  });
+                                })
+                          ],
+                        )
+                      ]),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.green),
+                      height: 100,
+                      width: 100,
+                      child: Column(children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(status2),
+                            Switch(
+                                value: isSwitched2,
+                                onChanged: (value) {
+                                  setState(() {
+                                    isSwitched2 = !isSwitched2;
+                                    isSwitched2
+                                        ? status2 = 'ON'
+                                        : status2 = 'OFF';
+                                  });
+                                })
+                          ],
+                        )
+                      ]),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(12),
+                          color: Colors.green),
+                      height: 100,
+                      width: 100,
+                      child: Column(children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(status3),
+                            Switch(
+                                value: isSwitched3,
+                                onChanged: (value) {
+                                  setState(() {
+                                    isSwitched3 = !isSwitched3;
+                                    isSwitched3
+                                        ? status3 = 'ON'
+                                        : status3 = 'OFF';
+                                  });
+                                })
+                          ],
+                        )
+                      ]),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }
