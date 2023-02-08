@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -64,6 +66,16 @@ class MainScreen extends StatelessWidget {
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: ((context) {
                   return const Tuesday();
+                })));
+              },
+            ),
+          ),
+          Card(
+            child: ListTile(
+              title: const Text('2/8/23 - Wednesday'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) {
+                  return const Wednesday();
                 })));
               },
             ),
@@ -619,8 +631,82 @@ class Wednesday extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-          child: Center(
-        child: Column(),
+          child: Container(
+        height: double.infinity,
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: NetworkImage(
+                  'https://images.pexels.com/photos/4792349/pexels-photo-4792349.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+              fit: BoxFit.cover),
+        ),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 2, sigmaY: 2),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                flex: 3,
+                child: Container(
+                  width: double.infinity,
+                  margin: const EdgeInsets.all(25),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      SizedBox(
+                        height: 40,
+                      ),
+                      Text(
+                        'Sweet &',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 40),
+                      ),
+                      Text(
+                        'Smart Home',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 40),
+                      ),
+                      SizedBox(
+                        height: 20,
+                      ),
+                      Text(
+                        'You can control your smart home and you live in future',
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Center(
+                  child: SizedBox(
+                    height: 60,
+                    width: 300,
+                    child: ElevatedButton(
+                      onPressed: (() {}),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                      ),
+                      child: const Text(
+                        'Get Started',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, color: Colors.black),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       )),
     );
   }
