@@ -777,7 +777,7 @@ class _WednesdayA1State extends State<WednesdayA1> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
                   Text(
-                    'Good Morning Alex',
+                    'Good Morning, Alex',
                     style: TextStyle(fontSize: 30, color: Colors.white),
                   ),
                   SizedBox(
@@ -861,98 +861,224 @@ class _WednesdayA1State extends State<WednesdayA1> {
                     Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: Colors.green),
+                          color: isSwitched
+                              ? const Color(0xffff6041)
+                              : const Color(0xff1f1f1f)),
                       height: 100,
                       width: 100,
                       child: Column(children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Text(status),
+                            isSwitched
+                                ? const Text(
+                                    'ON',
+                                    style: TextStyle(color: Colors.white),
+                                  )
+                                : const Text(
+                                    'OFF',
+                                    style: TextStyle(color: Colors.grey),
+                                  ),
                             Switch(
+                                activeColor: Colors.white,
+                                activeTrackColor: const Color(0xffd33a1e),
                                 value: isSwitched,
                                 onChanged: (value) {
                                   setState(() {
                                     isSwitched = !isSwitched;
-                                    isSwitched ? status = 'ON' : status = 'OFF';
                                   });
                                 })
                           ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.all(20),
+                          alignment: Alignment.bottomLeft,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Icon(
+                                Icons.lightbulb,
+                                size: 45,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                'Lights',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16),
+                              )
+                            ],
+                          ),
                         )
                       ]),
                     ),
                     Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: Colors.green),
+                          color: isSwitched1
+                              ? const Color(0xffff6041)
+                              : const Color(0xff1f1f1f)),
                       height: 100,
                       width: 100,
                       child: Column(children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Text(status1),
+                            isSwitched1
+                                ? const Text(
+                                    'ON',
+                                    style: TextStyle(color: Colors.white),
+                                  )
+                                : const Text(
+                                    'OFF',
+                                    style: TextStyle(color: Colors.grey),
+                                  ),
                             Switch(
+                                activeColor: Colors.white,
+                                activeTrackColor: const Color(0xffd33a1e),
                                 value: isSwitched1,
                                 onChanged: (value) {
                                   setState(() {
                                     isSwitched1 = !isSwitched1;
-                                    isSwitched1
-                                        ? status1 = 'ON'
-                                        : status1 = 'OFF';
                                   });
                                 })
                           ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.all(20),
+                          alignment: Alignment.bottomLeft,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Icon(
+                                Icons.tv_rounded,
+                                size: 45,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                'Smart TV',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16),
+                              )
+                            ],
+                          ),
                         )
                       ]),
                     ),
                     Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: Colors.green),
+                          color: isSwitched2
+                              ? const Color(0xffff6041)
+                              : const Color(0xff1f1f1f)),
                       height: 100,
                       width: 100,
                       child: Column(children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Text(status2),
+                            isSwitched2
+                                ? const Text(
+                                    'ON',
+                                    style: TextStyle(color: Colors.white),
+                                  )
+                                : const Text(
+                                    'OFF',
+                                    style: TextStyle(color: Colors.grey),
+                                  ),
                             Switch(
+                                activeColor: Colors.white,
+                                activeTrackColor: const Color(0xffd33a1e),
                                 value: isSwitched2,
                                 onChanged: (value) {
                                   setState(() {
                                     isSwitched2 = !isSwitched2;
-                                    isSwitched2
-                                        ? status2 = 'ON'
-                                        : status2 = 'OFF';
                                   });
                                 })
                           ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.all(20),
+                          alignment: Alignment.bottomLeft,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Icon(
+                                Icons.air,
+                                size: 45,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                'Air Conditioner',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16),
+                              )
+                            ],
+                          ),
                         )
                       ]),
                     ),
                     Container(
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: Colors.green),
+                          color: isSwitched3
+                              ? const Color(0xffff6041)
+                              : const Color(0xff1f1f1f)),
                       height: 100,
                       width: 100,
                       child: Column(children: [
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            Text(status3),
+                            isSwitched3
+                                ? const Text(
+                                    'ON',
+                                    style: TextStyle(color: Colors.white),
+                                  )
+                                : const Text(
+                                    'OFF',
+                                    style: TextStyle(color: Colors.grey),
+                                  ),
                             Switch(
+                                activeColor: Colors.white,
+                                activeTrackColor: const Color(0xffd33a1e),
                                 value: isSwitched3,
                                 onChanged: (value) {
                                   setState(() {
                                     isSwitched3 = !isSwitched3;
-                                    isSwitched3
-                                        ? status3 = 'ON'
-                                        : status3 = 'OFF';
                                   });
                                 })
                           ],
+                        ),
+                        Container(
+                          margin: const EdgeInsets.all(20),
+                          alignment: Alignment.bottomLeft,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: const [
+                              Icon(
+                                Icons.router,
+                                size: 45,
+                                color: Colors.white,
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                'Wi - Fi',
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16),
+                              )
+                            ],
+                          ),
                         )
                       ]),
                     ),
