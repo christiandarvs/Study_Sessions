@@ -1394,3 +1394,12 @@ class Thursday extends StatelessWidget {
     );
   }
 }
+
+class Friday extends StatelessWidget {
+  const Friday({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold();
+  }
+}
