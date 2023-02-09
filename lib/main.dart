@@ -1166,10 +1166,11 @@ class Thursday extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(
-                height: 70,
+                height: 95,
               ),
               Container(
-                height: 240,
+                // color: Colors.red,
+                height: 250,
                 margin: const EdgeInsets.all(15),
                 width: 250,
                 // color: Colors.red,
@@ -1210,33 +1211,52 @@ class Thursday extends StatelessWidget {
                       height: 30,
                     ),
                     const Text(
-                        '~ I\'m gonna find us a way out of this, I promise. ~',
+                        '~ I\'m gonna find and I\'m gonna kill every last one of them. ~',
                         style: TextStyle(color: Colors.white, fontSize: 20)),
                     const SizedBox(
                       height: 5,
                     ),
                     SizedBox(
-                      width: 150,
+                      width: 180,
                       height: 50,
                       // color: Colors.blue,
                       child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          IconButton(
-                            onPressed: (() {}),
-                            icon: const Icon(Icons.person),
-                            color: Colors.white,
+                          Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border:
+                                    Border.all(width: 1, color: Colors.white)),
+                            child: IconButton(
+                              onPressed: (() {}),
+                              icon: const Icon(Icons.person),
+                              color: Colors.white,
+                            ),
                           ),
-                          IconButton(
-                            onPressed: (() {}),
-                            icon: const Icon(Icons.arrow_downward_rounded),
-                            color: Colors.white,
+                          Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border:
+                                    Border.all(width: 1, color: Colors.white)),
+                            child: IconButton(
+                              onPressed: (() {}),
+                              icon: const Icon(Icons.gamepad_rounded),
+                              color: Colors.white,
+                            ),
                           ),
-                          IconButton(
-                            onPressed: (() {}),
-                            icon: const Icon(
-                                Icons.local_fire_department_outlined),
-                            color: Colors.white,
-                          )
+                          Container(
+                            decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border:
+                                    Border.all(width: 1, color: Colors.white)),
+                            child: IconButton(
+                              onPressed: (() {}),
+                              icon: const Icon(
+                                  Icons.local_fire_department_outlined),
+                              color: Colors.white,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -1260,24 +1280,34 @@ class Thursday extends StatelessWidget {
                     children: [
                       Flexible(
                         child: Container(
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: const DecorationImage(
                                 image: NetworkImage(
                                     'https://cdn.dribbble.com/userupload/4452817/file/original-5a712d52c155c869ed4a0658e4072e64.png?compress=1&resize=1024x1536&vertical=center'),
                                 fit: BoxFit.cover),
                           ),
-                        ),
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Flexible(
-                        child: Container(
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
-                                image: NetworkImage(
-                                    'https://cdn.dribbble.com/userupload/4452818/file/original-dc46389b1c1f4af3f59e0741e2124333.png?compress=1&resize=1024x1536&vertical=center'),
-                                fit: BoxFit.cover),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'TLOU',
+                                  style: TextStyle(
+                                      color: Colors.grey.shade200,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                const Text(
+                                  'Part 1',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 16),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -1286,11 +1316,70 @@ class Thursday extends StatelessWidget {
                       ),
                       Flexible(
                         child: Container(
-                          decoration: const BoxDecoration(
-                            image: DecorationImage(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: const DecorationImage(
+                                image: NetworkImage(
+                                    'https://cdn.dribbble.com/userupload/4452818/file/original-dc46389b1c1f4af3f59e0741e2124333.png?compress=1&resize=1024x1536&vertical=center'),
+                                fit: BoxFit.cover),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'TLOU',
+                                  style: TextStyle(
+                                      color: Colors.grey.shade200,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                const Text(
+                                  'Left Behind',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 16),
+                                )
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Flexible(
+                        child: Container(
+                          width: double.infinity,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            image: const DecorationImage(
                                 image: NetworkImage(
                                     'https://cdn.dribbble.com/userupload/4452819/file/original-9b5233b86d8fa67404b95ab13cce0593.png?compress=1&resize=1024x1536&vertical=center'),
                                 fit: BoxFit.cover),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  'TLOU',
+                                  style: TextStyle(
+                                      color: Colors.grey.shade200,
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                const Text(
+                                  'Part 2',
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 16),
+                                )
+                              ],
+                            ),
                           ),
                         ),
                       ),
