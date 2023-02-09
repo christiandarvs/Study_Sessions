@@ -1125,66 +1125,183 @@ class Thursday extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-          child: Container(
-        width: double.infinity,
-        height: double.infinity,
-        decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: NetworkImage(
-              'https://i.pinimg.com/originals/6d/09/59/6d09598d0d19bf326b63523495b05fba.jpg',
-            ),
-            fit: BoxFit.cover,
+    return Container(
+      width: double.infinity,
+      height: double.infinity,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: NetworkImage(
+            'https://i.pinimg.com/originals/6d/09/59/6d09598d0d19bf326b63523495b05fba.jpg',
           ),
+          fit: BoxFit.cover,
         ),
-        child: BackdropFilter(
+      ),
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          centerTitle: true,
+          title: const Text(
+            'THE LAST OF US',
+            style: TextStyle(
+                fontFamily: 'AC Compacta', wordSpacing: 2, fontSize: 30),
+          ),
+          elevation: 0,
+          leading: IconButton(
+              onPressed: (() {}), icon: const Icon(Icons.density_medium)),
+          actions: [
+            IconButton(
+                onPressed: (() {}),
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xff171719)),
+                icon: const Icon(
+                  Icons.question_mark,
+                  color: Colors.grey,
+                )),
+          ],
+        ),
+        backgroundColor: Colors.transparent,
+        body: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              const SizedBox(
+                height: 70,
+              ),
+              Container(
+                height: 240,
+                margin: const EdgeInsets.all(15),
+                width: 250,
+                // color: Colors.red,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ElevatedButton(
-                      onPressed: (() {}),
-                      style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color(0xff171719)),
-                      child: const Text(
-                        'Menu',
-                        style: TextStyle(
-                            fontWeight: FontWeight.normal, color: Colors.grey),
-                      ),
+                    Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: const [
+                          Text(
+                            'Ellie',
+                            style: TextStyle(
+                                fontFamily: 'AC Compacta',
+                                color: Colors.white,
+                                fontSize: 50),
+                          ),
+                          SizedBox(
+                            width: 25,
+                          ),
+                          Text('19 y/o',
+                              style: TextStyle(
+                                  fontFamily: 'AC Compacta',
+                                  color: Colors.white,
+                                  wordSpacing: 5,
+                                  fontSize: 20))
+                        ]),
+                    const SizedBox(
+                      height: 30,
                     ),
                     const Text(
-                      'THE LAST OF US',
+                      'Williams',
                       style: TextStyle(
+                          fontFamily: 'AC Compacta',
                           color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20),
+                          fontSize: 50),
                     ),
-                    IconButton(
-                        onPressed: (() {}),
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: const Color(0xff171719)),
-                        icon: const Icon(
-                          Icons.question_mark,
-                          color: Colors.grey,
-                        )),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                    const Text(
+                        '~ I\'m gonna find us a way out of this, I promise. ~',
+                        style: TextStyle(color: Colors.white, fontSize: 20)),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    SizedBox(
+                      width: 150,
+                      height: 50,
+                      // color: Colors.blue,
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: (() {}),
+                            icon: const Icon(Icons.person),
+                            color: Colors.white,
+                          ),
+                          IconButton(
+                            onPressed: (() {}),
+                            icon: const Icon(Icons.arrow_downward_rounded),
+                            color: Colors.white,
+                          ),
+                          IconButton(
+                            onPressed: (() {}),
+                            icon: const Icon(
+                                Icons.local_fire_department_outlined),
+                            color: Colors.white,
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               ),
-              // const SizedBox(
-              //   height: 70,
-              // ),
+              Container(
+                margin: const EdgeInsets.all(15),
+                child: const Text(
+                  'Ellie\'s Story',
+                  style: TextStyle(
+                      fontFamily: 'AC Compacta',
+                      color: Colors.white,
+                      fontSize: 35),
+                ),
+              ),
+              Flexible(
+                child: Container(
+                  margin: const EdgeInsets.all(15),
+                  child: Row(
+                    children: [
+                      Flexible(
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: NetworkImage(
+                                    'https://cdn.dribbble.com/userupload/4452817/file/original-5a712d52c155c869ed4a0658e4072e64.png?compress=1&resize=1024x1536&vertical=center'),
+                                fit: BoxFit.cover),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Flexible(
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: NetworkImage(
+                                    'https://cdn.dribbble.com/userupload/4452818/file/original-dc46389b1c1f4af3f59e0741e2124333.png?compress=1&resize=1024x1536&vertical=center'),
+                                fit: BoxFit.cover),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      Flexible(
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            image: DecorationImage(
+                                image: NetworkImage(
+                                    'https://cdn.dribbble.com/userupload/4452819/file/original-9b5233b86d8fa67404b95ab13cce0593.png?compress=1&resize=1024x1536&vertical=center'),
+                                fit: BoxFit.cover),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ),
-      )),
+      ),
     );
   }
 }
