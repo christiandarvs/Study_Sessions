@@ -79,7 +79,17 @@ class MainScreen extends StatelessWidget {
                 })));
               },
             ),
-          )
+          ),
+          Card(
+            child: ListTile(
+              title: const Text('2/9/23 - Thursday'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) {
+                  return const Thursday();
+                })));
+              },
+            ),
+          ),
         ]),
       ),
     );
@@ -1106,6 +1116,75 @@ class _WednesdayA1State extends State<WednesdayA1> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class Thursday extends StatelessWidget {
+  const Thursday({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+          child: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: NetworkImage(
+              'https://i.pinimg.com/originals/6d/09/59/6d09598d0d19bf326b63523495b05fba.jpg',
+            ),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 1, sigmaY: 1),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 8.0, vertical: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    ElevatedButton(
+                      onPressed: (() {}),
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xff171719)),
+                      child: const Text(
+                        'Menu',
+                        style: TextStyle(
+                            fontWeight: FontWeight.normal, color: Colors.grey),
+                      ),
+                    ),
+                    const Text(
+                      'THE LAST OF US',
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20),
+                    ),
+                    IconButton(
+                        onPressed: (() {}),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xff171719)),
+                        icon: const Icon(
+                          Icons.question_mark,
+                          color: Colors.grey,
+                        )),
+                  ],
+                ),
+              ),
+              // const SizedBox(
+              //   height: 70,
+              // ),
+            ],
+          ),
+        ),
+      )),
     );
   }
 }
