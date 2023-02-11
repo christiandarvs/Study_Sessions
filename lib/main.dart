@@ -90,6 +90,16 @@ class MainScreen extends StatelessWidget {
               },
             ),
           ),
+          Card(
+            child: ListTile(
+              title: const Text('2/12/23 - Sunday'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) {
+                  return const Sunday1();
+                })));
+              },
+            ),
+          ),
         ]),
       ),
     );
@@ -1395,11 +1405,171 @@ class Thursday extends StatelessWidget {
   }
 }
 
-class Friday extends StatelessWidget {
-  const Friday({super.key});
+class Sunday1 extends StatelessWidget {
+  const Sunday1({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    final imgLinks = [
+      'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/1181391/pexels-photo-1181391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/709188/pexels-photo-709188.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      'https://images.pexels.com/photos/2770600/pexels-photo-2770600.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    ];
+
+    final names = [
+      'Joseph Young',
+      'James Wilcox',
+      'Marcus Ward',
+      'Joseph Rodriguez',
+      'Zachary Wilson',
+      'Oscar Klein'
+    ];
+    return Scaffold(
+      backgroundColor: Colors.grey.shade300,
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: const [
+                      Icon(Icons.pin_drop_outlined),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        'Paris, France',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Icon(Icons.keyboard_arrow_down)
+                    ],
+                  ),
+                  const CircleAvatar(
+                    backgroundImage: NetworkImage(
+                        'https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+                  )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+              child: TextField(
+                decoration: InputDecoration(
+                    prefixIcon: const Icon(Icons.search),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    hintText: 'Search City, Address...'),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(20.0),
+              child: Text(
+                'Top rated tour guides near you',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              ),
+            ),
+            Expanded(
+              flex: 5,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                child: GridView.builder(
+                    itemCount: 6,
+                    gridDelegate:
+                        const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            mainAxisSpacing: 10,
+                            mainAxisExtent: 240,
+                            crossAxisSpacing: 10),
+                    itemBuilder: ((context, index) {
+                      return Card(
+                        shape: const RoundedRectangleBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Expanded(
+                                flex: 2,
+                                child: ClipRRect(
+                                  borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(20),
+                                    topRight: Radius.circular(20),
+                                  ),
+                                  child: Container(
+                                    width: double.infinity,
+                                    alignment: Alignment.topRight,
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image:
+                                                NetworkImage(imgLinks[index]),
+                                            fit: BoxFit.cover)),
+                                    child: const Padding(
+                                      padding: EdgeInsets.all(5.0),
+                                      child: Icon(
+                                        Icons.check_circle_outlined,
+                                        color: Colors.green,
+                                        size: 30,
+                                      ),
+                                    ),
+                                  ),
+                                )),
+                            Expanded(
+                                child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 12.0, vertical: 5),
+                                  child: Text(
+                                    names[index],
+                                    style: const TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 16),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 12),
+                                  child: Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: [
+                                      const Text(
+                                        '14/hr',
+                                        style: TextStyle(
+                                            fontSize: 16,
+                                            color: Colors.blue,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      IconButton(
+                                          onPressed: (() {}),
+                                          icon:
+                                              const Icon(Icons.bookmark_border))
+                                    ],
+                                  ),
+                                )
+                              ],
+                            ))
+                          ],
+                        ),
+                      );
+                    })),
+              ),
+            )
+          ],
+        ),
+      ),
+    );
   }
 }
