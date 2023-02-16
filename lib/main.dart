@@ -100,6 +100,16 @@ class MainScreen extends StatelessWidget {
               },
             ),
           ),
+          Card(
+            child: ListTile(
+              title: const Text('2/16/23 - Thursday'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) {
+                  return const Thursday1();
+                })));
+              },
+            ),
+          ),
         ]),
       ),
     );
@@ -1571,5 +1581,14 @@ class Sunday1 extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class Thursday1 extends StatelessWidget {
+  const Thursday1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
