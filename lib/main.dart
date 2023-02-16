@@ -1584,11 +1584,308 @@ class Sunday1 extends StatelessWidget {
   }
 }
 
-class Thursday1 extends StatelessWidget {
+class Thursday1 extends StatefulWidget {
   const Thursday1({super.key});
 
   @override
+  State<Thursday1> createState() => _Thursday1State();
+}
+
+class _Thursday1State extends State<Thursday1> {
+  int currentIndex = 0;
+  @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      backgroundColor: const Color(0xfff7f6fd),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        leading: const Padding(
+          padding: EdgeInsets.all(5),
+          child: CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://cdn-icons-png.flaticon.com/512/4128/4128176.png'),
+          ),
+        ),
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('Good Morning,',
+                style: TextStyle(color: Colors.grey.shade700)),
+            const Text(
+              'Christian Darvin',
+              style: TextStyle(color: Colors.black),
+            )
+          ],
+        ),
+        actions: [
+          IconButton(
+              onPressed: (() {}),
+              icon: const Icon(
+                Icons.search,
+                color: Colors.black,
+              )),
+          IconButton(
+              onPressed: (() {}),
+              icon: const Icon(
+                Icons.notifications_none_rounded,
+                color: Colors.black,
+              ))
+        ],
+        elevation: 0,
+      ),
+      body: SafeArea(
+        child: Center(
+          child: Column(
+            children: [
+              Container(
+                margin:
+                    const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
+                height: 150,
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  boxShadow: const [
+                    BoxShadow(offset: Offset(10, 10), color: Color(0xff302a60))
+                  ],
+                  borderRadius: BorderRadius.circular(15),
+                  gradient: const LinearGradient(
+                    colors: [Color(0xff6c60d4), Color(0xff695cd2)],
+                  ),
+                ),
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: Container(
+                        margin: const EdgeInsets.all(15),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              'Check your dental health today',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 22),
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              'Schedule your dental check up now!',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 15),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        margin: const EdgeInsets.all(5),
+                        child: Image.network(
+                            'https://cdn-icons-png.flaticon.com/512/1331/1331808.png'),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12.0, vertical: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Our Services',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    ),
+                    TextButton(
+                        onPressed: (() {}),
+                        child: const Text(
+                          'See All',
+                          style: TextStyle(color: Color(0xff7064d7)),
+                        ))
+                  ],
+                ),
+              ),
+              Flexible(
+                child: ListView.separated(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: ((context, index) {
+                      return ElevatedButton.icon(
+                        onPressed: (() {}),
+                        icon: const Icon(Icons.masks),
+                        label: const Text('Scaling'),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xff695cd2)),
+                      );
+                    }),
+                    separatorBuilder: ((context, index) {
+                      return const SizedBox(
+                        width: 5,
+                      );
+                    }),
+                    itemCount: 4),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 12.0, vertical: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Available Doctors',
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    ),
+                    TextButton(
+                        onPressed: (() {}),
+                        child: const Text(
+                          'See All',
+                          style: TextStyle(color: Color(0xff7064d7)),
+                        ))
+                  ],
+                ),
+              ),
+              Expanded(
+                flex: 5,
+                child: ListView.builder(
+                    itemExtent: 170,
+                    itemCount: 10,
+                    itemBuilder: ((context, index) {
+                      return Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 20),
+                        child: Card(
+                          child: Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: ListTile(
+                                      leading: const CircleAvatar(
+                                        backgroundImage: NetworkImage(
+                                            'https://cdn-icons-png.flaticon.com/512/1331/1331806.png'),
+                                      ),
+                                      title: const Text('Dr. Samantha Smith'),
+                                      subtitle: Row(
+                                        children: const [
+                                          Text('General Dentist'),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Icon(
+                                            Icons.star,
+                                            color: Colors.yellow,
+                                          ),
+                                          Text('5.0')
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                  IconButton(
+                                      onPressed: (() {}),
+                                      icon: const Icon(Icons.more_vert_sharp))
+                                ],
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Row(
+                                  children: const [
+                                    Icon(Icons.location_on),
+                                    SizedBox(
+                                      width: 10,
+                                    ),
+                                    Text('Manila Doctors Clinic')
+                                  ],
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 15,
+                              ),
+                              Padding(
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 8.0),
+                                child: Row(
+                                  children: [
+                                    Container(
+                                      padding: const EdgeInsets.all(5),
+                                      color: const Color(0xffe6eef6),
+                                      child: Row(
+                                        children: const [
+                                          Icon(
+                                            Icons.calendar_today_rounded,
+                                            color: Color(0xff695cd2),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Text(
+                                            'Friday, 2 July 2023',
+                                            style: TextStyle(
+                                                color: Color(0xff695cd2)),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      width: 10,
+                                    ),
+                                    Container(
+                                      padding: const EdgeInsets.all(5),
+                                      color: const Color(0xffe6eef6),
+                                      child: Row(
+                                        children: const [
+                                          Icon(
+                                            Icons.watch_later_outlined,
+                                            color: Color(0xff695cd2),
+                                          ),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Text(
+                                            '10:00 AM',
+                                            style: TextStyle(
+                                                color: Color(0xff695cd2)),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      );
+                    })),
+              )
+            ],
+          ),
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: const Color(0xff695dce),
+        backgroundColor: const Color(0xffffffff),
+        type: BottomNavigationBarType.fixed,
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.chat_bubble_outline_sharp), label: 'Messages'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.calendar_today_sharp), label: 'Schedule'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.settings), label: 'Settings'),
+        ],
+        currentIndex: currentIndex,
+        onTap: (value) {
+          setState(() {
+            currentIndex = value;
+          });
+        },
+      ),
+    );
   }
 }
