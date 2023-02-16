@@ -1598,40 +1598,8 @@ class _Thursday1State extends State<Thursday1> {
     return Scaffold(
       backgroundColor: const Color(0xfff7f6fd),
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        leading: const Padding(
-          padding: EdgeInsets.all(5),
-          child: CircleAvatar(
-            backgroundImage: NetworkImage(
-                'https://cdn-icons-png.flaticon.com/512/4128/4128176.png'),
-          ),
-        ),
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text('Good Morning,',
-                style: TextStyle(color: Colors.grey.shade700)),
-            const Text(
-              'Christian Darvin',
-              style: TextStyle(color: Colors.black),
-            )
-          ],
-        ),
-        actions: [
-          IconButton(
-              onPressed: (() {}),
-              icon: const Icon(
-                Icons.search,
-                color: Colors.black,
-              )),
-          IconButton(
-              onPressed: (() {}),
-              icon: const Icon(
-                Icons.notifications_none_rounded,
-                color: Colors.black,
-              ))
-        ],
         elevation: 0,
+        backgroundColor: Colors.transparent,
       ),
       body: SafeArea(
         child: Center(
@@ -1640,7 +1608,7 @@ class _Thursday1State extends State<Thursday1> {
               Container(
                 margin:
                     const EdgeInsets.symmetric(horizontal: 25, vertical: 15),
-                height: 150,
+                height: 160,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   boxShadow: const [
