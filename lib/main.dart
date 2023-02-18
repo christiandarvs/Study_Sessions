@@ -1875,17 +1875,169 @@ class Friday extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const CircleAvatar(),
-        title: const Text('Welcome Back'),
+        leading: const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: CircleAvatar(
+            backgroundColor: Colors.white,
+            backgroundImage: NetworkImage(
+                'https://cdn-icons-png.flaticon.com/512/4140/4140048.png'),
+          ),
+        ),
+        title: const Text(
+          'Welcome back!',
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
         elevation: 0,
+        backgroundColor: Colors.transparent,
         actions: [
           IconButton(
               onPressed: () {},
-              icon: const Icon(Icons.notifications_none_rounded))
+              icon: const Icon(
+                Icons.notifications_active_outlined,
+                color: Colors.black,
+              ))
         ],
       ),
-      body: SafeArea(child: Column()),
+      body: SafeArea(
+          child: Column(
+        children: [
+          Container(
+            height: 100,
+            width: double.infinity,
+            margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Medical Service',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    Expanded(
+                      child: SizedBox(
+                        height: 40,
+                        child: ElevatedButton.icon(
+                          onPressed: (() {}),
+                          icon: const Icon(Icons.schedule_outlined),
+                          label: const Text('Appointment'),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: const Color(0xff5973ec),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10))),
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 15,
+                    ),
+                    Expanded(
+                      child: SizedBox(
+                        height: 40,
+                        child: ElevatedButton.icon(
+                          onPressed: (() {}),
+                          icon: const Icon(Icons.emergency_outlined),
+                          label: const Text('Emergency'),
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: const Color(0xff2b3876),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Container(
+            height: 140,
+            width: double.infinity,
+            margin: const EdgeInsets.symmetric(horizontal: 15),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Medical Service',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
+                ),
+                const SizedBox(
+                  height: 15,
+                ),
+                const Text(
+                  'Approximate age',
+                  style: TextStyle(fontSize: 16),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: (() {}),
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 5),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.grey)),
+                        width: 80,
+                        height: 40,
+                        child: const Text('0-15'),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: (() {}),
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 5),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.grey)),
+                        width: 80,
+                        height: 40,
+                        child: const Text('0-15'),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: (() {}),
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 5),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.grey)),
+                        width: 80,
+                        height: 40,
+                        child: const Text('0-15'),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: (() {}),
+                      child: Container(
+                        margin: const EdgeInsets.symmetric(horizontal: 5),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            border: Border.all(color: Colors.grey)),
+                        width: 80,
+                        height: 40,
+                        child: const Text('0-15'),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
+          ),
+        ],
+      )),
     );
   }
 }
