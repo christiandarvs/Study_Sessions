@@ -1868,9 +1868,28 @@ class _Thursday1State extends State<Thursday1> {
   }
 }
 
-class Friday extends StatelessWidget {
+class Friday extends StatefulWidget {
   const Friday({super.key});
 
+  @override
+  State<Friday> createState() => _FridayState();
+}
+
+class _FridayState extends State<Friday> {
+  bool isPressed = false;
+  bool isPressed2 = false;
+  bool isPressed3 = false;
+  bool isPressed4 = false;
+  bool isPressed5 = false;
+  bool isPressed6 = false;
+  bool isPressed7 = false;
+  bool isPressed8 = false;
+  bool isPressed9 = false;
+  bool isPressed10 = false;
+  bool isPressed11 = false;
+  bool isPressed12 = false;
+  bool isPressed13 = false;
+  int val = -1;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -1903,9 +1922,9 @@ class Friday extends StatelessWidget {
           child: Column(
         children: [
           Container(
-            height: 100,
+            height: 90,
             width: double.infinity,
-            margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -1914,7 +1933,7 @@ class Friday extends StatelessWidget {
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 15,
                 ),
                 Row(
                   children: [
@@ -1957,14 +1976,14 @@ class Friday extends StatelessWidget {
             ),
           ),
           Container(
-            height: 140,
+            height: 120,
             width: double.infinity,
             margin: const EdgeInsets.symmetric(horizontal: 15),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Text(
-                  'Medical Service',
+                  'Questionnaire',
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal),
                 ),
                 const SizedBox(
@@ -1977,65 +1996,497 @@ class Friday extends StatelessWidget {
                 const SizedBox(
                   height: 20,
                 ),
-                Row(
-                  children: [
-                    GestureDetector(
-                      onTap: (() {}),
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 5),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.grey)),
-                        width: 80,
-                        height: 40,
-                        child: const Text('0-15'),
+                Expanded(
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      GestureDetector(
+                        onTap: (() {
+                          setState(() {
+                            isPressed = !isPressed;
+                          });
+                        }),
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 5),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              color: isPressed
+                                  ? const Color(0xff5973ec)
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.grey)),
+                          width: 80,
+                          height: 40,
+                          child: const Text('0-15'),
+                        ),
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: (() {}),
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 5),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.grey)),
-                        width: 80,
-                        height: 40,
-                        child: const Text('0-15'),
+                      GestureDetector(
+                        onTap: (() {
+                          setState(() {
+                            isPressed2 = !isPressed2;
+                          });
+                        }),
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 5),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              color: isPressed2
+                                  ? const Color(0xff5973ec)
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.grey)),
+                          width: 80,
+                          height: 40,
+                          child: const Text('15-25'),
+                        ),
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: (() {}),
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 5),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.grey)),
-                        width: 80,
-                        height: 40,
-                        child: const Text('0-15'),
+                      GestureDetector(
+                        onTap: (() {
+                          setState(() {
+                            isPressed3 = !isPressed3;
+                          });
+                        }),
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 5),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              color: isPressed3
+                                  ? const Color(0xff5973ec)
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.grey)),
+                          width: 80,
+                          height: 40,
+                          child: const Text('25-35'),
+                        ),
                       ),
-                    ),
-                    GestureDetector(
-                      onTap: (() {}),
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(horizontal: 5),
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(color: Colors.grey)),
-                        width: 80,
-                        height: 40,
-                        child: const Text('0-15'),
+                      GestureDetector(
+                        onTap: (() {
+                          setState(() {
+                            isPressed4 = !isPressed4;
+                          });
+                        }),
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 5),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              color: isPressed4
+                                  ? const Color(0xff5973ec)
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.grey)),
+                          width: 80,
+                          height: 40,
+                          child: const Text('35-45'),
+                        ),
                       ),
-                    ),
-                  ],
-                )
+                      GestureDetector(
+                        onTap: (() {
+                          setState(() {
+                            isPressed5 = !isPressed5;
+                          });
+                        }),
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 5),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              color: isPressed5
+                                  ? const Color(0xff5973ec)
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.grey)),
+                          width: 80,
+                          height: 40,
+                          child: const Text('45-55'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
+          const SizedBox(
+            height: 25,
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 15),
+            width: double.infinity,
+            height: 80,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  'Ongoing Disease',
+                  style: TextStyle(fontSize: 16),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+                Expanded(
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: [
+                      GestureDetector(
+                        onTap: (() {
+                          setState(() {
+                            isPressed6 = !isPressed6;
+                          });
+                        }),
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 5),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              color: isPressed6
+                                  ? const Color(0xff5973ec)
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.grey)),
+                          width: 80,
+                          height: 40,
+                          child: const Text('None'),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (() {
+                          setState(() {
+                            isPressed7 = !isPressed7;
+                          });
+                        }),
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 5),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              color: isPressed7
+                                  ? const Color(0xff5973ec)
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.grey)),
+                          width: 80,
+                          height: 40,
+                          child: const Text('Asthma'),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (() {
+                          setState(() {
+                            isPressed8 = !isPressed8;
+                          });
+                        }),
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 5),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              color: isPressed8
+                                  ? const Color(0xff5973ec)
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.grey)),
+                          width: 80,
+                          height: 40,
+                          child: const Text('Diabetes'),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: (() {
+                          setState(() {
+                            isPressed9 = !isPressed9;
+                          });
+                        }),
+                        child: Container(
+                          margin: const EdgeInsets.symmetric(horizontal: 5),
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                              color: isPressed9
+                                  ? const Color(0xff5973ec)
+                                  : Colors.transparent,
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(color: Colors.grey)),
+                          width: 100,
+                          height: 40,
+                          child: const Text('Hypertension'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 25,
+          ),
+          Row(
+            children: [
+              Expanded(
+                  child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color.fromARGB(255, 219, 211, 211),
+                ),
+                margin: const EdgeInsets.fromLTRB(15, 0, 0, 0),
+                height: 100,
+                width: 100,
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    const Text(
+                      'Bleeding',
+                      style: TextStyle(
+                          color: Color(0xff5973ec),
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  isPressed10 = !isPressed10;
+                                });
+                              },
+                              child: Container(
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 5),
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    color: isPressed10
+                                        ? const Color(0xff5973ec)
+                                        : Colors.transparent,
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(color: Colors.grey)),
+                                width: 80,
+                                height: 40,
+                                child: const Text('Yes'),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  isPressed11 = !isPressed11;
+                                });
+                              },
+                              child: Container(
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 5),
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    color: isPressed11
+                                        ? const Color(0xff5973ec)
+                                        : Colors.transparent,
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(color: Colors.grey)),
+                                width: 80,
+                                height: 40,
+                                child: const Text('No'),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              )),
+              const SizedBox(
+                width: 10,
+              ),
+              Expanded(
+                  child: Container(
+                margin: const EdgeInsets.fromLTRB(0, 0, 15, 0),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: const Color.fromARGB(255, 219, 211, 211),
+                ),
+                height: 100,
+                width: 100,
+                child: Column(
+                  children: [
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    const Text(
+                      'Poisoning',
+                      style: TextStyle(
+                          color: Color(0xff5973ec),
+                          fontWeight: FontWeight.bold),
+                    ),
+                    const SizedBox(
+                      height: 15,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 10),
+                      child: Row(
+                        children: [
+                          Expanded(
+                            child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  isPressed12 = !isPressed12;
+                                });
+                              },
+                              child: Container(
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 5),
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    color: isPressed12
+                                        ? const Color(0xff5973ec)
+                                        : Colors.transparent,
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(color: Colors.grey)),
+                                width: 80,
+                                height: 40,
+                                child: const Text('Yes'),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  isPressed13 = !isPressed13;
+                                });
+                              },
+                              child: Container(
+                                margin:
+                                    const EdgeInsets.symmetric(horizontal: 5),
+                                alignment: Alignment.center,
+                                decoration: BoxDecoration(
+                                    color: isPressed13
+                                        ? const Color(0xff5973ec)
+                                        : Colors.transparent,
+                                    borderRadius: BorderRadius.circular(10),
+                                    border: Border.all(color: Colors.grey)),
+                                width: 80,
+                                height: 40,
+                                child: const Text('No'),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ))
+            ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              width: double.infinity,
+              // color: Colors.red,
+              margin: const EdgeInsets.symmetric(horizontal: 15),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const Text(
+                    'Symptoms',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        children: [
+                          Row(
+                            children: [
+                              const Text('Headache'),
+                              Radio(
+                                  value: 1,
+                                  groupValue: val,
+                                  onChanged: ((value) {
+                                    setState(() {});
+                                  }))
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              const Text('Headache'),
+                              Radio(
+                                  value: 1,
+                                  groupValue: val,
+                                  onChanged: ((value) {}))
+                            ],
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Row(
+                            children: [
+                              const Text('Temperature'),
+                              Radio(
+                                  value: 1,
+                                  groupValue: val,
+                                  onChanged: ((value) {}))
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              const Text('Tachycardia'),
+                              Radio(
+                                  value: 1,
+                                  groupValue: val,
+                                  onChanged: ((value) {}))
+                            ],
+                          ),
+                        ],
+                      ),
+                      Column(
+                        children: [
+                          Row(
+                            children: [
+                              const Text('Vomiting'),
+                              Radio(
+                                  value: 1,
+                                  groupValue: val,
+                                  onChanged: ((value) {}))
+                            ],
+                          ),
+                          Row(
+                            children: [
+                              const Text('Diarrhea'),
+                              Radio(
+                                  value: 1,
+                                  groupValue: val,
+                                  onChanged: ((value) {}))
+                            ],
+                          ),
+                        ],
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+          Expanded(
+              child: Container(
+            margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+            child: SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: const Color(0xff2e3a78)),
+                child: const Text('Call on'),
+              ),
+            ),
+          ))
         ],
       )),
     );
