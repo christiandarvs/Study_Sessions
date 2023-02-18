@@ -110,6 +110,16 @@ class MainScreen extends StatelessWidget {
               },
             ),
           ),
+          Card(
+            child: ListTile(
+              title: const Text('2/17/23 - Thursday'),
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: ((context) {
+                  return const Friday();
+                })));
+              },
+            ),
+          ),
         ]),
       ),
     );
@@ -1854,6 +1864,28 @@ class _Thursday1State extends State<Thursday1> {
           });
         },
       ),
+    );
+  }
+}
+
+class Friday extends StatelessWidget {
+  const Friday({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        leading: const CircleAvatar(),
+        title: const Text('Welcome Back'),
+        centerTitle: true,
+        elevation: 0,
+        actions: [
+          IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.notifications_none_rounded))
+        ],
+      ),
+      body: SafeArea(child: Column()),
     );
   }
 }
